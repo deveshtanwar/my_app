@@ -1,0 +1,113 @@
+To start using react app we need to first go to cmd prompt
+1. npx create-react-app "name of app" 
+2. cd "name of app" 
+3. npm start
+****************************************************************************
+Firstly we need to import react so traditional method that can be used :
+var react = require('react');
+var ReactDom = require('react-dom');
+
+Now after ES6 or using (Babel) it can be written as :
+import React from 'react';
+import ReactDom from 'react-dom';
+
+ReactDom.render("kya likhna hai", "kha likhna hai", callback function);
+
+If we want to use more than one JSX element in render then all the elements should be enclosed in a single element like <div>.
+                        or
+We can also write as array of elements like :
+ReactDom.render(
+    [
+        <h1> ...... </h1>,
+        <p> ........ </p>
+    ],
+)
+                        or
+Better form of writting above method is using <React.fragment>, because it will avoid formation of extra div in case of using <div>.
+Instead of writing <React.fragment> we can just write <> .... </> that's it.
+
+****************************************************************************
+To create new react app you need to like install complete create-react-app in command line and obviously that's gonna take some time, so like every time if we want to create new-react-app what I should do is I just code that file in index.js in root folder that is coolapp in my case and then if I need to save that file then save that code in another "named.js" file in different folder and when I need to use that saved file then just copy that code and paste it into index.js file present in root folder of react app.
+
+****************************************************************************
+To use html in javascript we used ReactDOM.render() method, Now to use javascript in that
+ReactDOM.render() method just add js code in {....} curly brackets.
+
+*****************************************************************************
+using jsx attributes in react - they are same as html attributes like <a href = " "> ....</a>
+eg- using contentEditable = "True" is a attribute written in camelCasing.
+
+self closing tags 
+<img /> is a self closing tag, since it doesn't have anything inside tag.
+
+*****************************************************************************
+Instead of using class for css use className (camelcasing).
+
+To use Inline css in index.js create object of that css and use camelCasing instead of kebab-
+
+ex:
+
+const heading = {
+        textAlign: "center"
+        marginTop: "25px",
+        color: "rgb(230, 139, 29)",
+        textTransform: "capitalize",
+        fontWeight: "bold"
+}
+
+and add name of object in jsx like  - style = {heading}
+
+*****************************************************************************
+
+Creating components in react
+
+Create a new file for component and first letter of name of file should be capital, eg-
+Heading.jsx, now write following code in component file -
+
+//
+import React from 'react';
+
+function Heading (){
+    return <h1> Hello my name is Devesh</h1>
+}
+     
+export default Heading; //
+
+
+and in index.js we need to import that component as -
+
+import Heading from './Heading';
+
+Now use that component in <React.fragment> as <Heading/>
+
+*****************************************************************************
+
+Using App.jsx , in index.js use import only App.jsx and rest all the components created should
+be imported in App.jsx .
+
+*****************************************************************************
+
+Exporting more than one - 
+
+export default whatever;
+Now,
+export {names, my_prog};
+
+Importing more than one - 
+
+import whatever, {names, my_prog} from './App.jsx';
+Now, to use them, then also write in curly braces eg- 
+
+<>
+    <ol>
+        <li> {whatever} </li>
+        <li> {names} </li>
+        <li> {my_prog} </li>
+    </ol>
+</>
+
+*****************************************************************************
+
+For writing only upto 2 digits or user required use -
+
+div.tofixed(2);
